@@ -7,7 +7,7 @@ class TestLocators:
     '//p[text()="Конструктор"]' #Кнопка "Конструктор"
     '//p[text()="Лента Заказов"]' #Кнопка "Лента заказов"
     BUTTON_ACCOUNT = By.XPATH, '//p[text()="Личный Кабинет"]' #Кнопка "Личный кабинет"
-    '//button[text()="Войти в аккаунт"]' #Кнопка "Войти в аккаунт"
+    BUTTON_ENTER_IN_ACCOUNT = By.XPATH, '//button[text()="Войти в аккаунт"]' #Кнопка "Войти в аккаунт"
     BUTTON_COLLECT_ORDER = By.XPATH, '//button[text()="Оформить заказ"]'
 
     '//h1[text()="Соберите бургер"]' #Заголовок таблицы "Соберите бургер"
@@ -51,6 +51,12 @@ class TestLocators:
     BUTTON_REGISTRATION = By.XPATH, '//button[text()="Зарегистрироваться"]' #кнопка "Зарегистрироваться"
     LINK_FOR_ENTER = By.XPATH, '//a[text()="Войти"]' #ссылка на вход
     ERROR_PASSWORD = By.XPATH, '//p[text()="Некорректный пароль"]'
+    ERROR_USER = By.XPATH, '//p[text()="Такой пользователь уже существует"]'
+
+    #Личный кабинет
+    LINK_FOR_PROFILE = By.XPATH, '//a[text()="Профиль"]'
+    INPUT_ACCOUNT_NAME = By.XPATH, '//div[contains(label, "Имя")]/input' #поле для ввода Имя
+    INPUT_ACCOUNT_LOGIN = By.XPATH, '//div[contains(label, "Логин")]/input'
 
     #Страница востановления пароля
     '//h2[text()="Восстановление пароля"]'
