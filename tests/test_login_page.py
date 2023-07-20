@@ -1,5 +1,3 @@
-import time
-
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from test_locators import TestLocators
