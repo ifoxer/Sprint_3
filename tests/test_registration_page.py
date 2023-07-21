@@ -11,15 +11,15 @@ def test_registration_page(driver):
     header = driver.find_element(*TestLocators.REGISTRATION_HEADER).text
     assert header == 'Регистрация'
 
-def test_successful_registration(driver):
+def test_successful_registration(driver, fake_name, fake_email):
     WebDriverWait(driver, 10).until(
         expected_conditions.presence_of_element_located((TestLocators.BUTTON_ACCOUNT)))
     driver.find_element(*TestLocators.BUTTON_ACCOUNT).click()
     driver.find_element(*TestLocators.LINK_FOR_REGISTRATION).click()
     driver.find_element(*TestLocators.INPUT_NEW_NAME).clear()
-    driver.find_element(*TestLocators.INPUT_NEW_NAME).send_keys('Frodo')
+    driver.find_element(*TestLocators.INPUT_NEW_NAME).send_keys(fake_name)
     driver.find_element(*TestLocators.INPUT_NEW_LOGIN).clear()
-    driver.find_element(*TestLocators.INPUT_NEW_LOGIN).send_keys('fbaggins3@ya.ru')
+    driver.find_element(*TestLocators.INPUT_NEW_LOGIN).send_keys(fake_email)
     driver.find_element(*TestLocators.INPUT_NEW_PASSWORD).clear()
     driver.find_element(*TestLocators.INPUT_NEW_PASSWORD).send_keys('qa123456')
     driver.find_element(*TestLocators.BUTTON_REGISTRATION).click()
