@@ -4,17 +4,19 @@ from selenium import webdriver
 
 fake = Faker()
 
-@pytest.fixture(scope='function')
+@pytest.fixture()
 def driver():
     driver = webdriver.Chrome()
     driver.get("https://stellarburgers.nomoreparties.site/")
     yield driver
     driver.quit()
 
-@pytest.fixture(scope='function')
+
+@pytest.fixture()
 def fake_name():
     return fake.name()
 
-@pytest.fixture(scope='function')
+
+@pytest.fixture()
 def fake_email():
     return fake.email()
